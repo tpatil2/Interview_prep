@@ -13,7 +13,11 @@ int main(int argc, char const *argv[]) {
   t.root = t.insert_node(t.root,1);
   t.root = t.insert_node(t.root,44);
   t.root = t.insert_node(t.root,12);
+  t.root = t.insert_node(t.root,46);
+  t.root = t.insert_node(t.root,47);
 
+  t.print_tree(t.root);
+  t.root = t.delete_node(t.root,7);
   t.print_tree(t.root);
 
   return 0;

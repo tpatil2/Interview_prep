@@ -21,9 +21,12 @@ public:
 public:
 
     Tree();
-    node* insert_node(node* curr,int addData);
+    node* insert_node(node* itr,int addData);
     void print_tree(node* itr);
     node* create_node(int newdata);
+    node* delete_node(node* itr,int delData);
+    node* findmin(node* itr);
+    node* findmax(node* itr);
 
 };
 
