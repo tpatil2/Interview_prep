@@ -14,7 +14,6 @@ List::List(){
   temp=NULL;
 }
 
-
 void List::AddNode(int addData){
 
   node* n = new node;
@@ -23,16 +22,14 @@ void List::AddNode(int addData){
 
   if(head != NULL){
     curr=head;
-    while (curr->next != NULL) {
+    while (curr->next != NULL){
           curr=curr->next;
     }
       curr->next=n;
   }else{
     head=n;
   }
-
 }
-
 
 
 void List::DeleteNode(int deleteData){
@@ -40,7 +37,10 @@ void List::DeleteNode(int deleteData){
     node* delptr = new node;
     curr=head;
     temp=head;
+    bool flag = true;
+
     if(head != NULL){
+      while(flag==true){
       while(curr != NULL && curr->data != deleteData){
         temp=curr;
         curr=curr->next;
@@ -48,6 +48,7 @@ void List::DeleteNode(int deleteData){
       if(curr == NULL){
           std::cout << "Element not found" << std::endl;
           delete delptr;
+          flag=false;
       }
       else{
             delptr=curr;
@@ -57,11 +58,12 @@ void List::DeleteNode(int deleteData){
               head=head->next;
               temp=NULL;
             }
-            delete delptr;
+            //delete delptr;
             std::cout << "Value is deleted" << std::endl;
+            List t2;
       }
+     }
     }
-
 }
 
 
@@ -72,6 +74,4 @@ void List::PrintList(){
       std::cout << curr->data << std::endl;
       curr=curr->next;
   }
-
-
 }
