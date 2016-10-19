@@ -1,9 +1,6 @@
 #ifndef LIST_H
 #define LIST_H
 
-
-
-
 class List
 {
   private:
@@ -21,6 +18,8 @@ class List
       void AddNode(int addData);
       void DeleteNode(int deleteData);
       void PrintList();
+      void find_kth_last(int k);
+      void partition_around(int x);
 
 };
 
