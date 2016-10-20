@@ -26,6 +26,7 @@ class List
       void find_kth_last(int k);
       void partition_around(int x);
       void reverse_list();
+      void is_palindrome();
 
 };
 

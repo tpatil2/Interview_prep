@@ -56,6 +56,30 @@ void List::reverse_list(){
   temp->next=NULL;
 }
 
+void List::is_palindrome(){
+
+    stack<node*> mystack;
+
+    temp=head;
+    while(temp!=NULL){
+      mystack.push(temp);
+      temp=temp->next;
+    }
+
+    temp=head;
+    bool flag=true;
+    while(!mystack.empty()){
+      if(temp->data != mystack.top()->data){
+        flag=false;
+      }
+      temp=temp->next;
+      mystack.pop();
+    }
+
+    if(flag==true) std::cout << "Linked List is palindrome" << std::endl;
+    else std::cout << "Linked List is Not palindrome" << std::endl;
+}
+
 
 void List::DeleteNode(int deleteData){
 
