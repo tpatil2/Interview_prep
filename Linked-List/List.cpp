@@ -1,5 +1,6 @@
 #include <cstdlib>
 #include <iostream>
+#include <stack>
 
 #include "List.h"
 
@@ -12,6 +13,7 @@ List::List(){
   head=NULL;
   curr=NULL;
   temp=NULL;
+
 }
 
 void List::AddNode(int addData){
@@ -29,6 +31,29 @@ void List::AddNode(int addData){
   }else{
     head=n;
   }
+}
+
+
+void List::reverse_list(){
+
+  stack<node*> mystack;
+  temp=head;
+
+  while(temp!=NULL){
+    mystack.push(temp);
+    temp=temp->next;
+  }
+
+  temp=mystack.top();
+  head=temp;
+  mystack.pop();
+
+  while(!mystack.empty()){
+    temp->next=mystack.top();
+    mystack.pop();
+    temp=temp->next;
+  }
+  temp->next=NULL;
 }
 
 
@@ -61,10 +86,33 @@ void List::DeleteNode(int deleteData){
             //delete delptr;
             std::cout << "Value is deleted" << std::endl;
             List t2;
+        }
       }
-     }
     }
 }
+
+void List::find_kth_last(int k){
+
+  curr=head;
+  temp=head;
+  int i=0;
+
+  while(i<k){
+    temp=temp->next;
+    i++;
+  }
+
+  while(temp->next!=NULL){
+    curr=curr->next;
+    temp=temp->next;
+  }
+
+  std::cout << "found"<<curr->data << std::endl;
+
+}
+
+
+
 
 
 void List::PrintList(){

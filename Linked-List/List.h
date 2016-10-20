@@ -4,14 +4,19 @@
 class List
 {
   private:
-      struct node{
-        int data;
-        node* next;
+
+      class node{
+
+        public:
+          int data;
+          node* next;
       };
+
 
       node* curr;
       node* temp;
       node* head;
+
 
   public:
       List();//constructor
@@ -20,11 +25,8 @@ class List
       void PrintList();
       void find_kth_last(int k);
       void partition_around(int x);
+      void reverse_list();
 
 };
-
-
-
-
 
 #endif

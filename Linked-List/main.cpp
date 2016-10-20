@@ -1,9 +1,8 @@
 #include <cstdlib>
 #include "List.h"
+#include <iostream>
 
-
-
-
+using namespace std;
 int main(int argc, char const *argv[]) {
 
   List t;
@@ -14,6 +13,8 @@ int main(int argc, char const *argv[]) {
   t.AddNode(7);
   t.PrintList();
   t.find_kth_last(1);
-
+  t.reverse_list();
+  std::cout << "after reversing" << std::endl;
+  t.PrintList();
   return 0;
 }
