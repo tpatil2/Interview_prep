@@ -26,6 +26,7 @@ int Hash::hash_function(string key){
 void Hash::Add_item(string name, int age){
 
     int index = h1.hash_function(name);
+
     if(hashtable[index]->name == "empty"){
       hashtable[index]->name = name;
       hashtable[index]->age = age;
@@ -34,7 +35,6 @@ void Hash::Add_item(string name, int age){
     else{
 
       item* n = new item;
-
       n->name = name;
       n->age = age;
       n->next = NULL;
@@ -53,11 +53,13 @@ void Hash::Add_item(string name, int age){
 void Hash::print_table(){
 
   for(int i = 0; i<tablesize;i++){
-
-  std::cout << " hashtable[i]->name "<<  hashtable[i]->name
-  << " hashtable[i]->age "<<  hashtable[i]->age  << '\n';
-
+    item* n = new item;
+    n= hashtable[i];
+  while(n != NULL){
+    std::cout <<  n->name <<"'s'"
+    << " age is "<<  n->age  << '\n';
+      n=n->next;
+    }
   }
-
 
 }
