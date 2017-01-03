@@ -23,6 +23,7 @@ public:
   void print_table();
   int hash_function(string key);
   int num_items_bucket(int index);
+  void remove_item(string name);
 
 };
 

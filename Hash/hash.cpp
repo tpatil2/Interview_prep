@@ -49,6 +49,30 @@ void Hash::Add_item(string name, int age){
 
 }
 
+void Hash::remove_item(string r_name){
+
+  int index = hash_function(r_name);
+  item* n = new item;
+  n=hashtable[index];
+  item* temp;
+  while(n != NULL && n->name != r_name){
+    temp=n;
+    n=n->next;
+  }
+
+  if(n == NULL){
+    std::cout << "element not present" << '\n';
+  }else{
+    temp->next=n->next;
+    delete n;
+    std::cout << r_name <<" is removed" << '\n';
+  }
+
+
+
+
+}
+
 int Hash::num_items_bucket(int i){
   int count=0;
 
@@ -67,10 +91,11 @@ void Hash::print_table(){
     item* n = new item;
     n= hashtable[i];
   while(n != NULL){
-    std::cout <<  n->name <<"'s'"
-    << " age is "<<  n->age  << '\n';
+    std::cout << i << " : "<<  n->name <<"->"
+    << n->age  << " ";
       n=n->next;
     }
+    std::cout << '\n';
   }
 
 }
