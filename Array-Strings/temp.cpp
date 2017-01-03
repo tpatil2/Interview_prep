@@ -3,16 +3,13 @@
 
 using namespace std;
 
-string rev_cstring(string str){
-
-
-return str;
-}
 
 int main(){
 
-  string str="litapvsajeT";
+  char *str = "tejas";
 
-  
+  std::cout << str << std::endl;
+
+
   return 0;
 }

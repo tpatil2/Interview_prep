@@ -136,7 +136,27 @@ void List::find_kth_last(int k){
 }
 
 
+void List::rev_iterative(node* itr){
 
+curr=itr;
+temp=itr;
+
+temp=curr->next;
+curr->next=NULL;
+
+while(temp!=NULL){
+
+    node* temp2 = new node;
+    temp2=temp->next;
+    temp->next=curr;
+    curr=temp;
+    temp=temp2;
+
+}
+
+head=curr;
+
+}
 
 
 void List::PrintList(){

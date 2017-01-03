@@ -12,7 +12,7 @@ class List
           node* next;
       };
 
-
+public:
       node* curr;
       node* temp;
       node* head;
@@ -27,6 +27,7 @@ class List
       void partition_around(int x);
       void reverse_list();
       void is_palindrome();
+      void rev_iterative(node* itr);
 
 };
 

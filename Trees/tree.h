@@ -27,6 +27,14 @@ public:
     node* delete_node(node* itr,int delData);
     node* findmin(node* itr);
     node* findmax(node* itr);
+    bool is_balanced(node* itr);
+    int max_height(node* itr);
+    int check_height(node* itr);
+    void level_order_print(node* itr);
+    bool is_BST(node* itr);
+    void BFS(node* itr);
+    node* common_ancesstor_BST(node* itr,int l,int r);
+    node* least_com_ans_BT(node* itr,int a,int b);
 
 };
 

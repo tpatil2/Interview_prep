@@ -32,25 +32,23 @@ bool is_empty(){
 
 void print(){
   for(int i=0;i<=top;i++){
-    std::cout << "|"<<arr[i]<<"|" << std::endl;
+    std::cout << "|"<<arr[i]<<"|" << "  ";
   }
+  std::cout << std::endl;
 }
 
 
 int main(){
 
-  push(1);
-  push(2);
-  push(4);
-  push(5);
-  push(7);
-  print();
-  pop();
-  print();
-  push(3);
-  push(9);
-  push(8);
-  pop();
-  print();
+  push(1);  print();
+  push(2);  print();
+  push(4);  print();
+  push(5);  print();
+  push(7);  print();
+  pop();    print();
+  push(3);  print();
+  push(9);  print();
+  push(8);  print();
+  pop();  print();
 
 }
