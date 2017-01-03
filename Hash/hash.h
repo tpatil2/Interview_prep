@@ -22,6 +22,7 @@ public:
   void Add_item(string name, int age);
   void print_table();
   int hash_function(string key);
+  int num_items_bucket(int index);
 
 };
 

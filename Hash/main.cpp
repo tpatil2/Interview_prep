@@ -11,7 +11,7 @@ int main(){
   h.Add_item("Tejas", 25);
   h.Add_item("Tejas", 25);
   h.Add_item("Rahul", 22);
+  std::cout << "Num if Items : "<< h.num_items_bucket(0)<< '\n';
   h.print_table();
-
   return 0;
 }

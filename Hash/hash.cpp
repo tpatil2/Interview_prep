@@ -49,7 +49,18 @@ void Hash::Add_item(string name, int age){
 
 }
 
+int Hash::num_items_bucket(int i){
+  int count=0;
 
+  item* n = new item;
+  n=hashtable[i];
+  while (n!=NULL) {
+    count++;
+    n=n->next;
+  }
+
+  return count;
+}
 void Hash::print_table(){
 
   for(int i = 0; i<tablesize;i++){
