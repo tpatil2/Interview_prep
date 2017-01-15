@@ -8,7 +8,7 @@ int main(int argc, char const *argv[]) {
 
   int k = 10;
 
-  auto somevar =  [k](int a,int b)-> int
+  auto somevar =  [=](int a,int b)-> int
   {
     //std::cout << "{a+b} = "<< a+b << '\n';
     return a+b+k;
